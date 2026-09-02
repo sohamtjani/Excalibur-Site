@@ -97,6 +97,12 @@ section.alt { background: var(--bg-alt); }
   border: 1.5px solid var(--border);
 }
 .btn-secondary:hover { border-color: var(--accent-blue); color: var(--accent-blue-deep); transform: translateY(-2px); }
+.btn-apply {
+  background: var(--navy);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(10, 26, 58, 0.18);
+}
+.btn-apply:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(10, 26, 58, 0.26); }
 
 /* Nav */
 .nav {
@@ -127,9 +133,12 @@ section.alt { background: var(--bg-alt); }
 }
 .nav-back:hover { color: var(--accent-blue-deep); }
 .nav-cta { padding: 10px 22px; font-size: 14px; }
+.nav-apply { margin-left: auto; }
 .nav-mobile-links { display: none; }
 @media (max-width: 860px) {
   .nav-links { display: none; }
+  .nav-inner > .btn-secondary,
+  .nav-inner > .btn-primary { display: none; }
 }
 
 /* Hero */
@@ -372,6 +381,7 @@ footer a { color: var(--accent-blue-deep); font-weight: 500; }
       <a href="/" class="nav-back">excal.org ↗</a>
     </div>
     <a class="btn btn-secondary nav-cta" href="/tutoring" style="margin-right:10px;">Excalibur Edu</a>
+    <button class="btn btn-apply nav-cta nav-apply" type="button" data-tally-open="RGqpWP" data-tally-layout="modal">Apply Now</button>
     <a class="btn btn-primary nav-cta" href="https://excalibur.neetocal.com/meetsoham" target="_blank" rel="noopener noreferrer">Book a Call</a>
   </div>
 </nav>
@@ -388,6 +398,7 @@ footer a { color: var(--accent-blue-deep); font-weight: 500; }
       <span>Built directly with a profitable high school entrepreneur</span>
     </div>
     <div class="hero-ctas reveal">
+      <button class="btn btn-apply" type="button" data-tally-open="RGqpWP" data-tally-layout="modal">Apply Now</button>
       <a class="btn btn-primary" href="https://excalibur.neetocal.com/meetsoham" target="_blank" rel="noopener noreferrer">Book Your Fit Call</a>
       <a class="btn btn-secondary" href="#how-it-works">View Program Structure</a>
     </div>
@@ -746,6 +757,7 @@ footer a { color: var(--accent-blue-deep); font-weight: 500; }
     <h2 class="reveal">Founding cohort: 4 seats left.</h2>
     <p class="reveal">1 of 5 seats already filled. Limited because work is direct and 1:1 — founding students get the most hands-on version of the sprint.</p>
     <p class="reveal">Applications close September 25. Fit call required before acceptance.</p>
+    <button class="btn btn-apply reveal" type="button" data-tally-open="RGqpWP" data-tally-layout="modal">Apply Now</button>
     <a class="btn btn-primary reveal" href="https://excalibur.neetocal.com/meetsoham" target="_blank" rel="noopener noreferrer">Book Your Fit Call</a>
   </div>
 </section>
@@ -831,6 +843,7 @@ footer a { color: var(--accent-blue-deep); font-weight: 500; }
     <p class="position-line reveal">"Most programs help students look impressive. SVS helps students build proof."</p>
     <p class="reveal" style="font-size:14px;color:var(--text-muted);font-weight:600;margin-bottom:24px;">4 of 5 founding seats left. Applications close September 25.</p>
     <div class="hero-ctas reveal">
+      <button class="btn btn-apply" type="button" data-tally-open="RGqpWP" data-tally-layout="modal">Apply Now</button>
       <a class="btn btn-primary" href="https://excalibur.neetocal.com/meetsoham" target="_blank" rel="noopener noreferrer">Book Your Fit Call</a>
     </div>
   </div>
@@ -842,6 +855,7 @@ footer a { color: var(--accent-blue-deep); font-weight: 500; }
   </div>
 </footer>
 
+<script async src="https://tally.so/widgets/embed.js"></script>
 <script>
 (function() {
   /* Scroll reveal */
