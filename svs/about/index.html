@@ -81,22 +81,22 @@ section.alt { background: var(--bg-alt); }
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   font-family: var(--font-body); font-weight: 600; font-size: 16px;
-  padding: 16px 32px; border-radius: 999px; cursor: pointer;
-  transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s var(--ease-out-expo);
-  border: none;
+  padding: 15px 28px; border-radius: 999px; cursor: pointer; white-space: nowrap; position: relative; isolation: isolate; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.7); backdrop-filter: blur(18px) saturate(150%); -webkit-backdrop-filter: blur(18px) saturate(150%);
+  transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s var(--ease-out-expo), border-color 0.35s;
 }
+.btn::before { content: ''; position: absolute; inset: -80%; z-index: -1; opacity: 0; background: radial-gradient(circle at var(--glow-x,50%) var(--glow-y,50%), rgba(255,255,255,0.56), transparent 24%); transition: opacity 0.35s; }
+.btn:hover::before, .btn:focus-visible::before { opacity: 1; } .btn:hover { transform: translateY(-3px); }
 .btn-primary {
-  background: var(--accent-gradient);
-  color: #fff;
-  box-shadow: 0 8px 24px rgba(45, 193, 232, 0.28);
+  background: linear-gradient(135deg, rgba(45,193,232,0.78), rgba(168,85,247,0.76), rgba(249,115,22,0.74)); color: #fff;
+  box-shadow: 0 10px 26px rgba(45,193,232,0.2), inset 0 1px 0 rgba(255,255,255,0.46);
 }
-.btn-primary:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 14px 32px rgba(168, 85, 247, 0.32); }
+.btn-primary:hover { box-shadow: 0 18px 36px rgba(168,85,247,0.26), inset 0 1px 0 rgba(255,255,255,0.56); }
 .btn-secondary {
-  background: transparent;
-  color: var(--navy);
-  border: 1.5px solid var(--border);
+  background: rgba(255,255,255,0.44); color: var(--navy); border-color: rgba(10,26,58,0.12);
+  box-shadow: 0 8px 20px rgba(10,26,58,0.06), inset 0 1px 0 rgba(255,255,255,0.78);
 }
-.btn-secondary:hover { border-color: var(--accent-blue); color: var(--accent-blue-deep); transform: translateY(-2px); }
+.btn-secondary:hover { border-color: rgba(45,193,232,0.45); color: var(--accent-blue-deep); }
 
 /* Nav */
 .nav {
@@ -107,17 +107,17 @@ section.alt { background: var(--bg-alt); }
   border-bottom: 1px solid var(--border);
 }
 .nav-inner {
-  max-width: 1160px; margin: 0 auto; padding: 16px 24px;
-  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  max-width: 1440px; margin: 0 auto; padding: 12px 24px;
+  display: grid; grid-template-columns: auto minmax(0,1fr) auto; align-items: center; gap: clamp(16px,2vw,36px);
 }
 .wordmark {
   font-family: var(--font-display); font-weight: 900; font-size: 19px;
   background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; color: transparent;
   white-space: nowrap;
 }
-.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links { display: flex; align-items: center; justify-content: center; gap: clamp(14px,1.8vw,28px); }
 .nav-links a:not(.btn) {
-  font-size: 14px; font-weight: 500; color: var(--text-secondary);
+  font-size: 14px; font-weight: 600; color: var(--text-secondary); white-space: nowrap;
   transition: color 0.2s;
 }
 .nav-links a:not(.btn):hover { color: var(--accent-blue-deep); }
@@ -127,9 +127,13 @@ section.alt { background: var(--bg-alt); }
 }
 .nav-back:hover { color: var(--accent-blue-deep); }
 .nav-cta { padding: 10px 22px; font-size: 14px; }
+.nav-actions { display: flex; align-items: center; gap: 10px; }
 @media (max-width: 860px) {
   .nav-links { display: none; }
+  .nav-inner { display: flex; justify-content: space-between; }
 }
+@media (max-width: 560px) { .nav-actions .edu-link { display: none; } }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:0.01ms !important; animation-iteration-count:1 !important; } }
 
 /* Hero */
 .about-hero { padding: 80px 0 64px; text-align: center; background: linear-gradient(180deg, #f4f8fc 0%, #ffffff 100%); }
@@ -203,8 +207,10 @@ footer a { color: var(--accent-blue-deep); font-weight: 500; }
       <a href="/svs#faq">FAQ</a>
       <a href="/" class="nav-back">excal.org ↗</a>
     </div>
-    <a class="btn btn-secondary nav-cta" href="/tutoring" style="margin-right:10px;">Excalibur Edu</a>
-    <a class="btn btn-primary nav-cta" href="https://tally.so/r/RGqpWP" target="_blank" rel="noopener noreferrer">Apply</a>
+    <div class="nav-actions">
+      <a class="btn btn-secondary nav-cta edu-link" href="/tutoring">Excalibur Edu</a>
+      <button class="btn btn-primary nav-cta" type="button" data-tally-open="RGqpWP" data-tally-layout="modal">Apply Now</button>
+    </div>
   </div>
 </nav>
 
@@ -293,7 +299,7 @@ footer a { color: var(--accent-blue-deep); font-weight: 500; }
       <p>"<strong>This system can be replicated by your student, to build something bigger than a typical extracurricular</strong>, guided by someone who has actually stood where they're standing."</p>
     </div>
     <div class="about-cta reveal">
-      <a class="btn btn-primary" href="https://tally.so/r/RGqpWP" target="_blank" rel="noopener noreferrer">Apply for Founding Cohort</a>
+      <button class="btn btn-primary" type="button" data-tally-open="RGqpWP" data-tally-layout="modal">Apply for Founding Cohort</button>
       <a class="btn btn-secondary" href="/svs" style="margin-left: 14px;">Back to Student Venture Sprint</a>
     </div>
     <p style="text-align:center;margin-top:18px;font-size:14px;color:var(--text-muted);font-weight:600;">Cohort 1 begins October 1. Applications close September 25.</p>
@@ -306,6 +312,7 @@ footer a { color: var(--accent-blue-deep); font-weight: 500; }
   </div>
 </footer>
 
+<script async src="https://tally.so/widgets/embed.js"></script>
 <script>
 (function() {
   var observer = new IntersectionObserver(function(entries) {
@@ -318,15 +325,11 @@ footer a { color: var(--accent-blue-deep); font-weight: 500; }
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
 
-  document.querySelectorAll('.btn-primary').forEach(function(btn) {
+  document.querySelectorAll('.btn').forEach(function(btn) {
     btn.addEventListener('mousemove', function(e) {
       var r = btn.getBoundingClientRect();
-      var x = (e.clientX - r.left - r.width / 2) * 0.12;
-      var y = (e.clientY - r.top - r.height / 2) * 0.12;
-      btn.style.transform = 'translate(' + x + 'px,' + y + 'px)';
-    });
-    btn.addEventListener('mouseleave', function() {
-      btn.style.transform = '';
+      btn.style.setProperty('--glow-x', ((e.clientX - r.left) / r.width * 100) + '%');
+      btn.style.setProperty('--glow-y', ((e.clientY - r.top) / r.height * 100) + '%');
     });
   });
 })();

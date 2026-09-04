@@ -63,12 +63,15 @@ a { text-decoration: none; }
 .nav-back:hover { color: var(--accent); }
 @media (max-width: 860px) { .nav-links { display: none; } }
 
-/* Buttons */
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 10px; font-weight: 600; font-size: 15px; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, color 0.2s; white-space: nowrap; }
-.btn-primary { background: var(--accent); color: #0a0a0a; }
-.btn-primary:hover { box-shadow: 0 0 24px var(--accent-glow); transform: translateY(-2px); }
-.btn-secondary { border: 1px solid var(--border); color: var(--text); }
-.btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+/* Liquid glass controls */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 28px; border-radius: 999px; font-weight: 600; font-size: 15px; white-space: nowrap; position: relative; isolation: isolate; overflow: hidden; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(18px) saturate(150%); -webkit-backdrop-filter: blur(18px) saturate(150%); transition: transform .3s var(--ease-out-expo), box-shadow .3s, border-color .3s; }
+.btn::before { content:''; position:absolute; inset:-80%; z-index:-1; opacity:0; background:radial-gradient(circle at var(--glow-x,50%) var(--glow-y,50%),rgba(255,255,255,.42),transparent 24%); transition:opacity .3s; }
+.btn:hover { transform:translateY(-3px); } .btn:hover::before,.btn:focus-visible::before { opacity:1; }
+.btn-primary { background: rgba(201,168,76,0.8); color: #0a0a0a; box-shadow: 0 10px 26px rgba(201,168,76,.18), inset 0 1px 0 rgba(255,255,255,.55); }
+.btn-primary:hover { box-shadow:0 18px 34px var(--accent-glow), inset 0 1px 0 rgba(255,255,255,.7); }
+.btn-secondary { background:rgba(255,255,255,.05); color:var(--text); border-color:rgba(255,255,255,.16); box-shadow:inset 0 1px 0 rgba(255,255,255,.12); }
+.btn-secondary:hover { border-color:var(--accent); color:var(--accent); }
+.btn:focus-visible { outline:3px solid rgba(201,168,76,.45); outline-offset:3px; }
 .nav-cta { padding: 10px 22px; font-size: 14px; }
 
 /* Hero */
@@ -272,6 +275,11 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
   els.forEach(el => io.observe(el));
+  document.querySelectorAll('.btn').forEach(btn => btn.addEventListener('mousemove', e => {
+    const r = btn.getBoundingClientRect();
+    btn.style.setProperty('--glow-x', `${(e.clientX - r.left) / r.width * 100}%`);
+    btn.style.setProperty('--glow-y', `${(e.clientY - r.top) / r.height * 100}%`);
+  }));
 });
 </script>
 
