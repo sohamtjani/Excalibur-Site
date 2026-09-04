@@ -36,6 +36,7 @@ src="https://www.facebook.com/tr?id=3312830605556685&ev=PageView&noscript=1"
   --accent-blue: #2dc1e8;
   --accent-blue-deep: #1a7fb0;
   --accent-gradient: linear-gradient(135deg, #2dc1e8, #a855f7, #f97316);
+  --stained-line: linear-gradient(110deg, #2dc1e8 0%, #7dd3fc 20%, #a855f7 49%, #f97316 76%, #2dc1e8 100%);
   --border: rgba(10, 26, 58, 0.1);
   --border-hover: rgba(45, 193, 232, 0.35);
   --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
@@ -83,29 +84,33 @@ section.alt { background: var(--bg-alt); }
   font-family: var(--font-body); font-weight: 600; font-size: 16px;
   padding: 15px 28px; border-radius: 999px; cursor: pointer; white-space: nowrap;
   position: relative; isolation: isolate; overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.7);
+  border: 1px solid transparent;
   backdrop-filter: blur(18px) saturate(150%); -webkit-backdrop-filter: blur(18px) saturate(150%);
-  transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s var(--ease-out-expo), border-color 0.35s;
+  background: linear-gradient(135deg, rgba(255,255,255,0.72), rgba(235,246,255,0.4)) padding-box, var(--stained-line) border-box;
+  background-size: auto, 220% 100%; animation: stainLine 8s linear infinite;
+  transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s var(--ease-out-expo);
 }
 .btn::before { content: ''; position: absolute; z-index: -1; inset: -80%; opacity: 0; background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(255,255,255,0.56), transparent 24%); transition: opacity 0.35s; }
 .btn:hover::before, .btn:focus-visible::before { opacity: 1; }
 .btn:hover { transform: translateY(-3px); }
 .btn:focus-visible, .faq-question:focus-visible, .menu-toggle:focus-visible { outline: 3px solid rgba(45,193,232,0.45); outline-offset: 3px; }
 .btn-primary {
-  background: linear-gradient(135deg, rgba(45,193,232,0.78), rgba(168,85,247,0.76), rgba(249,115,22,0.74));
+  background: linear-gradient(135deg, rgba(31,157,194,0.72), rgba(126,68,197,0.7), rgba(220,87,37,0.68)) padding-box, var(--stained-line) border-box;
+  background-size: auto, 220% 100%;
   color: #fff;
   box-shadow: 0 10px 26px rgba(45, 193, 232, 0.2), inset 0 1px 0 rgba(255,255,255,0.46);
 }
 .btn-primary:hover { box-shadow: 0 18px 36px rgba(168, 85, 247, 0.26), inset 0 1px 0 rgba(255,255,255,0.56); }
 .btn-secondary {
-  background: rgba(255,255,255,0.44);
+  background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(225,242,255,0.36)) padding-box, var(--stained-line) border-box;
+  background-size: auto, 220% 100%;
   color: var(--navy);
-  border-color: rgba(10,26,58,0.12);
   box-shadow: 0 8px 20px rgba(10,26,58,0.06), inset 0 1px 0 rgba(255,255,255,0.78);
 }
 .btn-secondary:hover { border-color: rgba(45,193,232,0.45); color: var(--accent-blue-deep); }
 .btn-apply {
-  background: rgba(10,26,58,0.88);
+  background: linear-gradient(135deg, rgba(10,26,58,0.88), rgba(34,45,92,0.76)) padding-box, var(--stained-line) border-box;
+  background-size: auto, 220% 100%;
   color: #fff;
   box-shadow: 0 10px 26px rgba(10, 26, 58, 0.19), inset 0 1px 0 rgba(255,255,255,0.2);
 }
@@ -146,7 +151,7 @@ section.alt { background: var(--bg-alt); }
 @media (max-width: 920px) {
   .nav-inner { display: flex; justify-content: space-between; }
   .nav-links, .nav-actions .edu-link, .nav-actions .book-link { display: none; }
-  .menu-toggle { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; padding: 0; border-radius: 50%; border: 1px solid rgba(10,26,58,0.12); background: rgba(255,255,255,0.48); color: var(--navy); backdrop-filter: blur(18px); }
+  .menu-toggle { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; padding: 0; border-radius: 50%; border: 1px solid transparent; background: linear-gradient(135deg, rgba(255,255,255,0.72), rgba(225,242,255,0.38)) padding-box, var(--stained-line) border-box; background-size: auto, 220% 100%; color: var(--navy); backdrop-filter: blur(18px); animation: stainLine 8s linear infinite; }
   .menu-toggle span, .menu-toggle::before, .menu-toggle::after { content: ''; display: block; width: 16px; height: 1.5px; background: currentColor; position: absolute; transition: transform 0.25s; }
   .menu-toggle::before { transform: translateY(-5px); } .menu-toggle::after { transform: translateY(5px); }
   .mobile-menu { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; position: absolute; left: 16px; right: 16px; top: calc(100% + 8px); padding: 14px; border-radius: 20px; background: rgba(255,255,255,0.88); border: 1px solid rgba(10,26,58,0.1); box-shadow: 0 18px 48px rgba(10,26,58,0.15); backdrop-filter: blur(22px); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: 0.25s; }
@@ -353,11 +358,11 @@ section.alt { background: var(--bg-alt); }
 .faq-item.open { border-color: var(--accent-blue); box-shadow: 0 6px 32px rgba(10,26,58,0.08); }
 .faq-question {
   width: 100%; display: flex; justify-content: space-between; align-items: center;
-  gap: 20px; padding: 22px 28px; text-align: left; background: rgba(255,255,255,0.54); border: 1px solid rgba(255,255,255,0.68); cursor: pointer;
+  gap: 20px; padding: 22px 28px; text-align: left; background: linear-gradient(135deg, rgba(255,255,255,0.72), rgba(225,242,255,0.36)) padding-box, var(--stained-line) border-box; background-size: auto, 220% 100%; border: 1px solid transparent; cursor: pointer;
   color: var(--navy); font-family: var(--font-body); font-size: 16px; font-weight: 600; line-height: 1.4;
-  backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.74); transition: background 0.25s, border-color 0.25s;
+  backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.74); animation: stainLine 8s linear infinite; transition: background 0.25s, border-color 0.25s;
 }
-.faq-question:hover { background: rgba(244,248,252,0.84); border-color: rgba(45,193,232,0.32); }
+.faq-question:hover { background: linear-gradient(135deg, rgba(255,255,255,0.88), rgba(225,242,255,0.5)) padding-box, var(--stained-line) border-box; background-size: auto, 220% 100%; }
 .faq-chevron { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent-blue-deep); transition: transform 0.45s var(--ease-out-expo); }
 .faq-item.open .faq-chevron { transform: rotate(180deg); }
 .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s var(--ease-out-expo); }
@@ -386,6 +391,7 @@ footer a { color: var(--accent-blue-deep); font-weight: 500; }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo); }
 .reveal.in-view { opacity: 1; transform: translateY(0); }
 
+@keyframes stainLine { to { background-position: 0 0, 220% 0; } }
 @keyframes floatAura { to { transform: translate3d(80px, 54px, 0) scale(1.12); } }
 @keyframes headlineShift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 @keyframes slowSpin { to { transform: rotate(1turn); } }
