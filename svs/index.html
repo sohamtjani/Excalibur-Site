@@ -228,7 +228,7 @@ section.alt { background: var(--bg-alt); }
   margin-top: 28px; font-family: var(--font-display); font-style: italic; font-size: 20px; color: var(--navy);
   padding: 22px 28px; background: var(--bg-alt); border-radius: 16px; border: 1px solid var(--border);
 }
-.intro-video { width: min(100%, 360px); display: block; margin: 30px auto; border-radius: 18px; background: var(--navy); box-shadow: 0 18px 40px rgba(10, 26, 58, 0.18); }
+.intro-video { width: min(100%, 720px); aspect-ratio: 16 / 9; display: block; margin: 30px auto; border: 0; border-radius: 18px; background: var(--navy); box-shadow: 0 18px 40px rgba(10, 26, 58, 0.18); }
 .founder-card {
   display: flex; align-items: center; gap: 20px; background: #fff; border: 1px solid var(--border);
   border-radius: 18px; padding: 20px 24px; margin-bottom: 28px;
@@ -548,10 +548,7 @@ footer a { color: var(--accent-blue-deep); font-weight: 500; }
         </div>
       </div>
       <p class="reveal">Your venture partner built multiple ventures in high school, including one that <strong>scaled to five-figure revenue within months at age 17</strong>. No teacher, counselor, or professor can teach this: they haven't done it. No cold-emailed founder can replicate it either: they never stood exactly where your student stands now, with no capital, no network, no track record.</p>
-      <video class="intro-video reveal" controls playsinline preload="metadata" aria-label="Introduction from Soham Jani, founder of Student Venture Sprint">
-        <source src="/svs/assets/svs-intro.m4v" type="video/x-m4v">
-        Your browser does not support embedded video. Please use a modern browser to watch the founder introduction.
-      </video>
+      <iframe class="intro-video reveal" src="https://www.youtube-nocookie.com/embed/Gl1rIUUaYq4?rel=0" title="Student Venture Sprint: Founder's Message" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       <p class="reveal" style="text-align:center;font-size:14px;color:var(--text-muted);margin-top:-12px;">Watch Soham explain the Student Venture Sprint directly.</p>
       <ul class="track-record reveal">
         <li>Founder, Excalibur — built and scaled an in-home tutoring and mentorship program before starting this incubator</li>
