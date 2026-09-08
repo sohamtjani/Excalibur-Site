@@ -1,0 +1,504 @@
+/* Phase 1 visual system: calm, editorial, and human. */
+:root {
+  --bg: #faf9f6;
+  --bg-alt: #f0f2ee;
+  --bg-card: #ffffff;
+  --bg-elevated: #ffffff;
+  --navy: #18212b;
+  --text: #18212b;
+  --text-secondary: #55616d;
+  --text-muted: #77818b;
+  --accent: #2f6b57;
+  --accent-blue: #2f6b57;
+  --accent-blue-deep: #245542;
+  --accent-dim: rgba(47, 107, 87, 0.12);
+  --accent-glow: rgba(47, 107, 87, 0.18);
+  --accent-gradient: #2f6b57;
+  --border: rgba(24, 33, 43, 0.14);
+  --border-hover: rgba(47, 107, 87, 0.42);
+  --glass: rgba(255, 255, 255, 0.82);
+  --font-display: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: var(--font-body);
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  font-family: var(--font-body) !important;
+}
+
+h1, h2, h3,
+.wordmark,
+.nav-logo,
+.founder-name,
+.position-line,
+.partner-key,
+.key-line,
+.stat-tile .num,
+.proof-tile .num,
+.outcome-tile span,
+.week-num,
+.big-num {
+  font-family: var(--font-display) !important;
+  letter-spacing: -0.035em;
+}
+
+h1, h2, h3 {
+  color: var(--navy) !important;
+}
+
+p,
+.hero-sub,
+.section-head p,
+.about-hero .sub,
+.legal-page p,
+.form-header p {
+  color: var(--text-secondary);
+}
+
+.eyebrow {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  color: var(--accent) !important;
+  font-family: var(--font-body) !important;
+  letter-spacing: 0.06em;
+}
+
+.nav,
+.navbar {
+  background: rgba(250, 249, 246, 0.94) !important;
+  border-color: var(--border) !important;
+  box-shadow: 0 1px 0 rgba(24, 33, 43, 0.03) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  backdrop-filter: blur(14px) !important;
+}
+
+.navbar {
+  position: sticky !important;
+  top: 0 !important;
+  left: auto !important;
+  transform: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  border-radius: 0 !important;
+  padding: 16px max(24px, calc((100vw - 1160px) / 2)) !important;
+}
+
+.nav-logo,
+.wordmark {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  color: var(--navy) !important;
+}
+
+.nav-logo span {
+  color: var(--accent) !important;
+}
+
+.nav-links a,
+.nav-links a:not(.btn),
+.nav-back {
+  color: var(--text-secondary) !important;
+}
+
+.nav-links a:hover,
+.nav-links a:not(.btn):hover,
+.nav-back:hover {
+  color: var(--accent) !important;
+}
+
+.nav-links a::after {
+  background: var(--accent) !important;
+}
+
+.btn {
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  font-family: var(--font-body) !important;
+  letter-spacing: -0.01em;
+}
+
+.btn-primary,
+.form-submit {
+  background: var(--accent) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+.btn-primary:hover,
+.form-submit:hover {
+  background: var(--accent-blue-deep) !important;
+  box-shadow: none !important;
+  transform: translateY(-1px) !important;
+}
+
+.btn-apply {
+  background: var(--navy) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+.btn-apply:hover {
+  background: #273542 !important;
+  box-shadow: none !important;
+}
+
+.btn-secondary {
+  border-color: var(--border) !important;
+  color: var(--navy) !important;
+  background: transparent !important;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent-blue-deep) !important;
+}
+
+.hero,
+.about-hero,
+.final-cta {
+  background: var(--bg) !important;
+}
+
+.section.alt,
+.form-page,
+.legal-page {
+  background: var(--bg-alt) !important;
+}
+
+.hero::before,
+.form-page::before,
+.closing-band::before,
+.guarantee-band::before,
+.cta-band::before {
+  display: none !important;
+}
+
+.outcome-bar,
+.guarantee-band,
+.cta-band,
+.closing-band,
+.stats-section {
+  background: var(--navy) !important;
+}
+
+.outcome-tile,
+.stat-tile {
+  background: var(--navy) !important;
+}
+
+.outcome-tile::before,
+.stats-section .stat-tile::before {
+  background: var(--accent) !important;
+}
+
+.stats-section .stat-tile .lbl {
+  color: #ffffff !important;
+}
+
+.founder-card,
+.testimonial-card,
+.week-card,
+.clarifier-box,
+.cohort-box,
+.compare-col,
+.qa-item,
+.faq-item,
+.stat-tile,
+.proof-tile,
+.subject-card,
+.retention-card,
+.form-card {
+  box-shadow: 0 8px 24px rgba(24, 33, 43, 0.06) !important;
+  border-color: var(--border) !important;
+}
+
+.founder-card,
+.week-card,
+.clarifier-box,
+.cohort-box,
+.compare-col,
+.qa-item,
+.faq-item,
+.proof-tile,
+.subject-card,
+.retention-card {
+  background: var(--bg-card) !important;
+}
+
+.founder-card:hover,
+.week-card:hover,
+.faq-item:hover {
+  border-color: var(--border-hover) !important;
+  box-shadow: 0 12px 30px rgba(24, 33, 43, 0.09) !important;
+}
+
+.form-page {
+  min-height: calc(100vh - 72px);
+}
+
+.form-card {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 18px !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 16px 44px rgba(24, 33, 43, 0.08) !important;
+}
+
+.form-card::before {
+  display: none !important;
+}
+
+.form-header .eyebrow::before,
+.form-header .eyebrow::after {
+  background: var(--accent) !important;
+}
+
+.form-input {
+  background: #ffffff !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+
+.form-input::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 1 !important;
+}
+
+.form-input:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px var(--accent-dim) !important;
+}
+
+select.form-input {
+  background-color: #ffffff !important;
+}
+
+select.form-input option {
+  background: #ffffff !important;
+  color: var(--text) !important;
+}
+
+.footer,
+footer {
+  background: var(--bg) !important;
+  border-color: var(--border) !important;
+}
+
+.footer-copy,
+.footer-legal a,
+footer p {
+  color: var(--text-muted) !important;
+}
+
+.footer-legal a:hover,
+footer a {
+  color: var(--accent) !important;
+}
+
+.legal-page {
+  color: var(--text) !important;
+}
+
+.legal-page h1,
+.legal-page h2 {
+  color: var(--navy) !important;
+}
+
+.legal-page .back-link,
+.legal-page a {
+  color: var(--accent) !important;
+}
+
+.legal-page .back-link {
+  font-family: var(--font-body) !important;
+  letter-spacing: 0.04em !important;
+}
+
+.legal-page a:hover {
+  color: var(--accent-blue-deep) !important;
+}
+
+@media (max-width: 860px) {
+  .navbar {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Bright glass revision. Keep this layer last so every page shares the same visual language. */
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f4f8fc;
+  --bg-card: rgba(255, 255, 255, 0.72);
+  --bg-elevated: rgba(255, 255, 255, 0.86);
+  --navy: #0a1a3a;
+  --text: #0a1a3a;
+  --text-secondary: #4a5568;
+  --text-muted: #7c8aa0;
+  --accent: #a855f7;
+  --accent-blue: #2dc1e8;
+  --accent-blue-deep: #1a7fb0;
+  --accent-dim: rgba(168, 85, 247, 0.12);
+  --accent-glow: rgba(168, 85, 247, 0.24);
+  --accent-gradient: linear-gradient(135deg, #2dc1e8 0%, #a855f7 52%, #f97316 100%);
+  --border: rgba(10, 26, 58, 0.11);
+  --border-hover: rgba(45, 193, 232, 0.42);
+  --glass: rgba(255, 255, 255, 0.72);
+}
+
+html,
+body {
+  background: #ffffff !important;
+  color: var(--text) !important;
+}
+
+.eyebrow {
+  background: var(--accent-gradient) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+.nav,
+.navbar {
+  background: rgba(255, 255, 255, 0.74) !important;
+  border-color: rgba(255, 255, 255, 0.92) !important;
+  box-shadow: 0 12px 34px rgba(10, 26, 58, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(150%) !important;
+  backdrop-filter: blur(22px) saturate(150%) !important;
+}
+
+.nav-logo,
+.wordmark {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  color: var(--navy) !important;
+}
+
+.nav-links a,
+.nav-links a:not(.btn),
+.nav-back {
+  color: var(--text-secondary) !important;
+}
+
+.nav-links a:hover,
+.nav-links a:not(.btn):hover,
+.nav-back:hover {
+  color: var(--accent-blue-deep) !important;
+}
+
+.btn-primary,
+.form-submit {
+  background: var(--accent-gradient) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 22px rgba(168, 85, 247, 0.2) !important;
+}
+
+.btn-primary:hover,
+.form-submit:hover {
+  box-shadow: 0 14px 28px rgba(168, 85, 247, 0.28) !important;
+}
+
+.btn-apply {
+  background: var(--navy) !important;
+  color: #ffffff !important;
+}
+
+.btn-secondary {
+  color: var(--navy) !important;
+  background: rgba(255, 255, 255, 0.48) !important;
+  border-color: var(--border) !important;
+}
+
+.hero,
+.about-hero,
+.final-cta {
+  background:
+    radial-gradient(circle at 88% 2%, rgba(168, 85, 247, 0.11), transparent 28%),
+    radial-gradient(circle at 8% 0%, rgba(45, 193, 232, 0.12), transparent 26%),
+    #ffffff !important;
+}
+
+.section.alt,
+.form-page,
+.legal-page,
+.outcome-bar,
+.stats-section {
+  background: #f4f8fc !important;
+}
+
+.closing-band,
+.guarantee-band,
+.cta-band {
+  background: var(--accent-gradient) !important;
+}
+
+.outcome-tile,
+.stat-tile,
+.founder-card,
+.testimonial-card,
+.week-card,
+.clarifier-box,
+.cohort-box,
+.compare-col,
+.qa-item,
+.faq-item,
+.proof-tile,
+.subject-card,
+.retention-card,
+.form-card {
+  background: rgba(255, 255, 255, 0.72) !important;
+  border-color: rgba(255, 255, 255, 0.92) !important;
+  box-shadow: 0 14px 36px rgba(10, 26, 58, 0.08), inset 0 1px 0 rgba(255,255,255,0.92) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(140%) !important;
+  backdrop-filter: blur(20px) saturate(140%) !important;
+}
+
+.outcome-tile::before,
+.stats-section .stat-tile::before {
+  background: var(--accent-gradient) !important;
+}
+
+.form-card::before {
+  background: var(--accent-gradient) !important;
+}
+
+.form-input {
+  background: rgba(255, 255, 255, 0.78) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+
+.form-input:focus {
+  border-color: var(--accent-blue) !important;
+  box-shadow: 0 0 0 3px rgba(45, 193, 232, 0.14) !important;
+}
+
+.footer,
+footer {
+  background: #ffffff !important;
+  border-color: var(--border) !important;
+}

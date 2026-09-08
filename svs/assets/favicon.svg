@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Excalibur">
+  <rect width="64" height="64" rx="14" fill="#18212b"/>
+  <path d="M18 15h29v8H27v7h17v8H27v8h20v8H18z" fill="#faf9f6"/>
+  <rect x="18" y="15" width="5" height="41" rx="2.5" fill="#2f6b57"/>
+</svg>
