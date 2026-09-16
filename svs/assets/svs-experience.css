@@ -89,6 +89,31 @@ body.svs-page { background: #fff !important; color: var(--xp-ink) !important; }
 .experience-rail strong { color: #343968; font: 700 17px/1.2 var(--xp-display); letter-spacing: -.035em; }
 .experience-rail span { color: #747995; font-size: 12px; font-weight: 600; }
 
+/* Homepage route comparison */
+.experience-compare { padding: 122px 0 128px; background: #fff; }
+.experience-compare-heading { max-width: 720px; }
+.experience-compare-heading h2 { max-width: 690px; margin-top: 12px; color: var(--xp-ink); font: 800 clamp(40px, 5vw, 67px)/1.02 var(--xp-display); letter-spacing: -.06em; }
+.experience-compare-heading h2 em { color: #7b5bc9; }
+.experience-compare-heading > p:last-child { max-width: 650px; margin-top: 21px; color: var(--xp-ink-soft); font-size: 16px; line-height: 1.7; }
+.experience-compare-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); margin-top: 55px; border: 1px solid var(--xp-line); border-radius: 22px; overflow: hidden; box-shadow: 0 18px 46px rgba(50,56,120,.08); }
+.experience-compare-other { padding: clamp(30px, 5vw, 60px); background: #fff; }
+.experience-compare-svs { padding: clamp(30px, 5vw, 60px); color: #fff; background: linear-gradient(145deg, #292963, #40357c 60%, #7655b5); }
+.experience-compare-kicker { color: #8a90aa; font-size: 10px; font-weight: 800; letter-spacing: .13em; }
+.experience-compare-svs .experience-compare-kicker { color: #e9d2ff; }
+.experience-compare-other article { padding: 28px 0; border-bottom: 1px solid var(--xp-line); }
+.experience-compare-other article:first-of-type { margin-top: 22px; }
+.experience-compare-other article:last-child { border-bottom: 0; padding-bottom: 0; }
+.experience-compare-other h3 { color: var(--xp-ink); font: 700 25px/1.1 var(--xp-display); letter-spacing: -.04em; }
+.experience-compare-other article p { max-width: 460px; margin-top: 10px; color: var(--xp-ink-soft); font-size: 14px; line-height: 1.6; }
+.experience-compare-other article .experience-compare-price-tag { margin-top: 13px; color: #765bc9; font-size: 11px; font-weight: 800; letter-spacing: .035em; line-height: 1.2; }
+.experience-compare-price { display: flex; align-items: flex-start; gap: 7px; margin: 27px 0 0; padding: 16px 0 14px; color: #fff; font: 800 clamp(58px, 7vw, 94px)/1 var(--xp-display); letter-spacing: -.075em; white-space: nowrap; }
+.experience-compare-price sup { display: block; margin-top: .12em; font-size: .4em; line-height: 1; vertical-align: baseline; }
+.experience-compare-price-note { margin-top: 0; color: #e9e6ff; font-size: 13px; font-weight: 700; line-height: 1.45; }
+.experience-compare-svs ul { display: grid; gap: 19px; margin: 44px 0 0; padding: 0; list-style: none; }
+.experience-compare-svs li { position: relative; padding-left: 28px; color: #fff; font-size: 16px; line-height: 1.45; }
+.experience-compare-svs li::before { content: "✓"; position: absolute; left: 0; color: #73d3ff; font-size: 20px; font-weight: 700; line-height: 1; }
+@media (max-width: 720px) { .experience-compare { padding: 82px 0; }.experience-compare-layout { grid-template-columns: 1fr; margin-top: 35px; }.experience-compare-other,.experience-compare-svs { padding: 28px 24px; }.experience-compare-other article:first-of-type { margin-top: 16px; }.experience-compare-price { font-size: 67px; }.experience-compare-svs ul { margin-top: 31px; } }
+
 /* The compounding staircase */
 .experience-compound { padding: 126px 0 76px; background: linear-gradient(150deg, #fff, #f9f7ff 55%, #f3fbff); }
 .experience-compound-heading { max-width: 670px; }
