@@ -36,6 +36,8 @@ body.svs-page { margin: 0; }
 .experience-subpage .pricing-price { display: flex; align-items: flex-start; gap: 7px; margin: 24px 0 0; line-height: 1; white-space: nowrap; }
 .pricing-price sup { display: block; margin-top: .12em; font-size: .4em; line-height: 1; vertical-align: baseline; }
 .experience-subpage .pricing-price-note { margin: 17px 0 0; line-height: 1.45; }
+.experience-subpage .pricing-price del { display: flex; align-items: flex-start; gap: 7px; color: #8a8faa; text-decoration-color: currentColor; text-decoration-thickness: .075em; }
+.experience-subpage .pricing-price-current { display: flex; align-items: flex-start; color: var(--xp-ink); }
 .experience-subpage .page-cta-copy { margin: 0 auto 30px; }
 .experience-subpage .about-note { margin: 24px auto 0; }
 

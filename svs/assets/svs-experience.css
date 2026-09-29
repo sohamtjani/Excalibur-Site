@@ -108,6 +108,8 @@ body.svs-page { background: #fff !important; color: var(--xp-ink) !important; }
 .experience-compare-other article .experience-compare-price-tag { margin-top: 13px; color: #765bc9; font-size: 11px; font-weight: 800; letter-spacing: .035em; line-height: 1.2; }
 .experience-compare-price { display: flex; align-items: flex-start; gap: 7px; margin: 27px 0 0; padding: 16px 0 14px; color: #fff; font: 800 clamp(58px, 7vw, 94px)/1 var(--xp-display); letter-spacing: -.075em; white-space: nowrap; }
 .experience-compare-price sup { display: block; margin-top: .12em; font-size: .4em; line-height: 1; vertical-align: baseline; }
+.experience-compare-price del { display: flex; align-items: flex-start; gap: 7px; color: rgba(233,230,255,.58); text-decoration-color: currentColor; text-decoration-thickness: .075em; }
+.experience-compare-price-current { display: flex; align-items: flex-start; color: #fff; }
 .experience-compare-price-note { margin-top: 0; color: #e9e6ff; font-size: 13px; font-weight: 700; line-height: 1.45; }
 .experience-compare-svs ul { display: grid; gap: 19px; margin: 44px 0 0; padding: 0; list-style: none; }
 .experience-compare-svs li { position: relative; padding-left: 28px; color: #fff; font-size: 16px; line-height: 1.45; }
