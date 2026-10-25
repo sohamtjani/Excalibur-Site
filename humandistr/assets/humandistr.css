@@ -65,7 +65,7 @@ a { color: inherit; text-decoration: none; }
 .hd-neutral .hd-number-list p { color: var(--hd-muted); }
 .hd-neutral .hd-number-list strong { color: var(--hd-ink); }
 
-.hd-pod-grid { display: grid; grid-template-columns: repeat(4, 1fr); width: min(1400px, calc(100% - 64px)); margin: 0 auto 86px; border-top: 1px solid var(--hd-ink); }
+.hd-pod-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); width: min(1400px, calc(100% - 64px)); margin: 0 auto 86px; border-top: 1px solid var(--hd-ink); }
 .hd-pod-grid article { min-height: 280px; padding: 20px 20px 20px 0; border-right: 1px solid var(--hd-line); }
 .hd-pod-grid article + article { padding-left: 20px; }
 .hd-pod-grid article:last-child { border-right: 0; }
