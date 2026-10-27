@@ -47,7 +47,7 @@ a { color: inherit; text-decoration: none; }
 @keyframes hd-signal-sales { 0%, 20% { opacity: 0; transform: translate(36px, 28px) rotate(-12deg) scale(.85); } 32%, 55% { opacity: 1; transform: translate(0, 0) rotate(-4deg) scale(1); } 72%, 100% { opacity: 0; transform: translate(-16px, -10px) rotate(-1deg) scale(.9); } }
 @keyframes hd-signal-ugc { 0%, 24% { opacity: 0; transform: translate(28px, -26px) rotate(14deg) scale(.85); } 36%, 55% { opacity: 1; transform: translate(0, 0) rotate(7deg) scale(1); } 72%, 100% { opacity: 0; transform: translate(-12px, 14px) rotate(1deg) scale(.9); } }
 @keyframes hd-signal-becomes { 0%, 48% { opacity: 0; transform: translateY(12px); } 55%, 70% { opacity: 1; transform: translateY(0); } 82%, 100% { opacity: 0; transform: translateY(-8px); } }
-@keyframes hd-signal-story { 0%, 52% { opacity: 0; transform: translateY(24px) scale(.94); } 62%, 78% { opacity: 1; transform: translateY(0) scale(1); } 92%, 100% { opacity: 0; transform: translateY(-10px) scale(.98); } }
+@keyframes hd-signal-story { 0%, 52% { opacity: 0; transform: translateY(24px) scale(.94); } 62%, 100% { opacity: 1; transform: translateY(0) scale(1); } }
 @media (prefers-reduced-motion: reduce) {
   .hd-signal-fragment, .hd-signal-becomes, .hd-signal-story { animation: none; }
   .hd-signal-fragment { opacity: .75; }
