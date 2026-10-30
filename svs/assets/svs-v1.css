@@ -346,3 +346,29 @@ body.svs-page { background: #fff !important; color: var(--v1-ink) !important; fo
   .v1-university-window { width: 220px; height: 220px; padding: 10px; }
   .experience-page .v1-university-label { margin-bottom: 46px; }
 }
+
+/* Scheduling modal: keep the booking decision clear and in context. */
+body.svs-schedule-open { overflow: hidden; }
+.svs-schedule-modal { position: fixed; z-index: 1000; inset: 0; display: grid; place-items: center; padding: 24px; opacity: 0; visibility: hidden; transition: opacity .22s ease, visibility .22s ease; }
+.svs-schedule-modal[hidden] { display: none; }
+.svs-schedule-modal.is-open { opacity: 1; visibility: visible; }
+.svs-schedule-backdrop { position: absolute; inset: 0; background: rgba(23,26,69,.62); -webkit-backdrop-filter: blur(7px); backdrop-filter: blur(7px); }
+.svs-schedule-dialog { position: relative; width: min(100%, 760px); max-height: min(860px, calc(100vh - 48px)); overflow: auto; border: 1px solid rgba(23,26,69,.16); border-radius: 4px; background: #fff; box-shadow: 0 28px 80px rgba(23,26,69,.28); transform: translateY(12px) scale(.985); transition: transform .22s ease; }
+.svs-schedule-modal.is-open .svs-schedule-dialog { transform: translateY(0) scale(1); }
+.svs-schedule-close { position: absolute; z-index: 1; top: 16px; right: 16px; display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid var(--v1-line); border-radius: 50%; background: #fff; color: var(--v1-ink); cursor: pointer; font-size: 23px; line-height: 1; }
+.svs-schedule-close:hover { background: #f3f2ee; }
+.svs-schedule-copy { padding: 32px 62px 22px 32px; }
+.svs-schedule-copy .v1-kicker { margin: 0; color: var(--v1-accent); }
+.svs-schedule-copy h2 { margin: 13px 0 0; color: var(--v1-ink); font: 800 clamp(34px, 5vw, 52px)/.98 var(--xp-display); letter-spacing: -.055em; }
+.svs-schedule-copy p:last-child { max-width: 520px; margin: 15px 0 0; color: var(--v1-muted); font-size: 15px; line-height: 1.55; }
+.svs-schedule-action { display: grid; gap: 17px; margin: 0 32px; padding: 28px 30px 30px; border: 1px solid var(--v1-line); background: #f3f2ee; }
+.svs-schedule-action p { margin: 0; color: var(--v1-muted); font-size: 15px; line-height: 1.55; }
+.svs-schedule-action .experience-apply { justify-self: start; }
+.svs-schedule-action small { color: var(--v1-muted); font-size: 12px; line-height: 1.4; }
+@media (max-width: 720px) {
+  .svs-schedule-modal { padding: 12px; }
+  .svs-schedule-dialog { max-height: calc(100vh - 24px); }
+  .svs-schedule-copy { padding: 27px 52px 19px 22px; }
+  .svs-schedule-copy h2 { font-size: 38px; }
+  .svs-schedule-action { margin: 0 16px; padding: 22px; }
+}
