@@ -52,6 +52,49 @@
     });
   });
 
+  var universityShowcase = document.querySelector('.v1-university-showcase');
+  if (universityShowcase) {
+    var universitySlides = Array.prototype.slice.call(universityShowcase.querySelectorAll('.v1-university-slide'));
+    var universityIndex = 0;
+    var universityTimer;
+    var universityReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function setUniversityState(slide, state, isVisible) {
+      slide.classList.remove('is-current', 'is-entering', 'is-exiting');
+      if (state) slide.classList.add(state);
+      slide.setAttribute('aria-hidden', isVisible ? 'false' : 'true');
+    }
+
+    function showUniversitySlide(nextIndex) {
+      var currentSlide = universitySlides[universityIndex];
+      var nextSlide = universitySlides[nextIndex];
+      if (!currentSlide || !nextSlide || currentSlide === nextSlide) return;
+
+      setUniversityState(nextSlide, 'is-entering', false);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          setUniversityState(nextSlide, 'is-current', true);
+          setUniversityState(currentSlide, 'is-exiting', false);
+        });
+      });
+      window.setTimeout(function () {
+        setUniversityState(currentSlide, '', false);
+      }, 720);
+      universityIndex = nextIndex;
+    }
+
+    if (universitySlides.length) {
+      universitySlides.forEach(function (slide, index) {
+        setUniversityState(slide, index === 0 ? 'is-current' : '', index === 0);
+      });
+      if (!universityReducedMotion && universitySlides.length > 1) {
+        universityTimer = window.setInterval(function () {
+          showUniversitySlide((universityIndex + 1) % universitySlides.length);
+        }, 4200);
+      }
+    }
+  }
+
   var scheduleUrl = 'https://calendar.app.google/vzdbUVXQreSSxLEa8';
   var scheduleModal;
   var lastScheduleTrigger;
