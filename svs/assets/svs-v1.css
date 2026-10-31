@@ -369,7 +369,7 @@ body.svs-page { background: #fff !important; color: var(--v1-ink) !important; fo
 .v1-hero-grid { align-items: start; }
 .v1-hero-aside { display: grid; gap: 34px; align-content: start; padding-top: 12px; }
 .v1-hero-aside .v1-university-showcase { margin: 0; padding: 0; }
-.v1-hero-aside .v1-university-label { margin: 0 0 17px; }
+.v1-hero-aside .v1-university-label { margin: 0 0 17px; text-align: center; }
 .v1-hero-aside .v1-university-window { width: min(100%, 360px); height: 360px; margin: 0 auto; }
 .v1-hero-aside .v1-pipeline { max-width: none; }
 @media (max-width: 960px) {
