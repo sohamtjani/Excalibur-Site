@@ -328,12 +328,12 @@ body.svs-page { background: #fff !important; color: var(--v1-ink) !important; fo
 .v1-case-profile-name { margin-top: 14px; color: var(--v1-ink); font: 700 clamp(22px, 2.4vw, 32px)/1.05 var(--xp-display); letter-spacing: -.04em; }
 .v1-case-profile-identity .v1-small-note { max-width: 220px; margin-top: 15px !important; }
 @media (max-width: 720px) {
-  .v1-case-profile-label { grid-template-columns: 106px minmax(0, 1fr); column-gap: 18px; }
-  .v1-case-profile-portrait { width: 106px; height: 132px; margin-top: 20px; }
-  .v1-case-profile-identity { padding-top: 16px; }
+  .v1-case-profile-label { grid-template-columns: 1fr; }
+  .v1-case-profile-portrait { grid-column: 1; grid-row: 2; width: 168px; height: 210px; margin-top: 20px; }
+  .v1-case-profile-identity { grid-column: 1; grid-row: 3; padding-top: 23px; }
   .v1-case-profile-identity .v1-case-profile-mark { font-size: 62px; }
   .v1-case-profile-name { margin-top: 10px; font-size: 23px; }
-  .v1-case-profile-identity .v1-small-note { margin-top: 12px !important; }
+  .v1-case-profile-identity .v1-small-note { max-width: 260px; margin-top: 12px !important; }
 }
 
 /* Homepage university proof carousel: one large school visible at a time. */
