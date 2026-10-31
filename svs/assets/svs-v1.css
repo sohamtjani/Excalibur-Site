@@ -365,6 +365,23 @@ body.svs-page { background: #fff !important; color: var(--v1-ink) !important; fo
   .experience-page .v1-university-label { margin-bottom: 46px; }
 }
 
+/* Homepage hero: use the open right column for university proof, then the pipeline. */
+.v1-hero-grid { align-items: start; }
+.v1-hero-aside { display: grid; gap: 34px; align-content: start; padding-top: 12px; }
+.v1-hero-aside .v1-university-showcase { margin: 0; padding: 0; }
+.v1-hero-aside .v1-university-label { margin: 0 0 17px; }
+.v1-hero-aside .v1-university-window { width: min(100%, 360px); height: 360px; margin: 0 auto; }
+.v1-hero-aside .v1-pipeline { max-width: none; }
+@media (max-width: 960px) {
+  .v1-hero-aside { padding-top: 0; }
+  .v1-hero-aside .v1-university-window { margin-left: 0; }
+}
+@media (max-width: 720px) {
+  .v1-hero-aside { gap: 28px; }
+  .v1-hero-aside .v1-university-label { margin-bottom: 14px; }
+  .v1-hero-aside .v1-university-window { width: 280px; height: 280px; margin: 0 auto; }
+}
+
 /* Scheduling modal: keep the booking decision clear and in context. */
 body.svs-schedule-open { overflow: hidden; }
 .svs-schedule-modal { position: fixed; z-index: 1000; inset: 0; display: grid; place-items: center; padding: 24px; opacity: 0; visibility: hidden; transition: opacity .22s ease, visibility .22s ease; }
