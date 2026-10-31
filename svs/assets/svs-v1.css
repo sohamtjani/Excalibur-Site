@@ -234,9 +234,10 @@ body.svs-page { background: #fff !important; color: var(--v1-ink) !important; fo
 
 /* Homepage opportunity path: surface the mentor-to-startup pipeline directly below the hero. */
 .v1-opportunity-strip { padding: 74px 0 78px; border-bottom: 1px solid var(--v1-line); background: #f3f2ee; }
-.v1-opportunity-intro { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(44px, 9vw, 130px); align-items: end; margin-bottom: 42px; }
+.v1-opportunity-intro { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(44px, 9vw, 130px); align-items: start; margin-bottom: 42px; }
+.v1-opportunity-copy { display: flex; flex-direction: column; gap: 28px; }
 .v1-opportunity-intro h2 { max-width: 600px; margin-top: 14px; color: var(--v1-ink); font: 800 clamp(38px, 4.7vw, 61px)/1.02 var(--xp-display); letter-spacing: -.055em; }
-.v1-opportunity-intro > p:last-child { max-width: 570px; margin: 0; color: var(--v1-muted); font-size: 16px; line-height: 1.65; }
+.v1-opportunity-copy > p:last-child { max-width: 570px; margin: 0; color: var(--v1-muted); font-size: 16px; line-height: 1.65; }
 .v1-opportunity-steps { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--v1-ink); border-bottom: 1px solid var(--v1-line); }
 .v1-opportunity-steps > div { position: relative; min-height: 190px; padding: 19px 22px 23px 19px; border-left: 1px solid var(--v1-line); }
 .v1-opportunity-steps > div:first-child { border-left: 0; }
