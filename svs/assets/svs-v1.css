@@ -318,6 +318,24 @@ body.svs-page { background: #fff !important; color: var(--v1-ink) !important; fo
   .v1-journey > div p { grid-column: 2; }
 }
 
+/* Outcomes case study: give the student a clear, human profile moment. */
+.v1-case-profile-label { display: grid; grid-template-columns: 168px minmax(0, 1fr); grid-template-rows: auto 1fr; column-gap: 25px; align-items: start; }
+.v1-case-profile-label > .v1-kicker { grid-column: 1 / -1; }
+.v1-case-profile-portrait { grid-column: 1; grid-row: 2; width: 168px; height: 210px; margin-top: 24px; overflow: hidden; border: 1px solid var(--v1-line); background: #e9e8e3; box-shadow: 0 16px 34px rgba(50,57,125,.1); }
+.v1-case-profile-portrait img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.v1-case-profile-identity { grid-column: 2; grid-row: 2; padding-top: 20px; }
+.v1-case-profile-identity .v1-case-profile-mark { margin-top: 0; font-size: clamp(64px, 8vw, 106px); }
+.v1-case-profile-name { margin-top: 14px; color: var(--v1-ink); font: 700 clamp(22px, 2.4vw, 32px)/1.05 var(--xp-display); letter-spacing: -.04em; }
+.v1-case-profile-identity .v1-small-note { max-width: 220px; margin-top: 15px !important; }
+@media (max-width: 720px) {
+  .v1-case-profile-label { grid-template-columns: 106px minmax(0, 1fr); column-gap: 18px; }
+  .v1-case-profile-portrait { width: 106px; height: 132px; margin-top: 20px; }
+  .v1-case-profile-identity { padding-top: 16px; }
+  .v1-case-profile-identity .v1-case-profile-mark { font-size: 62px; }
+  .v1-case-profile-name { margin-top: 10px; font-size: 23px; }
+  .v1-case-profile-identity .v1-small-note { margin-top: 12px !important; }
+}
+
 /* Homepage university proof carousel: one large school visible at a time. */
 .v1-university-showcase { width: 100%; margin: 16px 0 0; padding: 12px 0 8px; }
 .experience-page .v1-university-label { margin: 0 0 58px; color: var(--v1-ink); font-size: 14px; font-weight: 700; line-height: 1.4; text-align: left; }
